@@ -10,6 +10,17 @@ let clock = document.querySelector('.cl')
 let timer = document.querySelector('.tm')
 let stopwatch = document.querySelector('.st')
 let shiftshift = document.querySelector('.siftsift')
+let sample = document.querySelector('.sample')
+let setsample = document.querySelector('.setsample')
+let setDate = document.querySelector('.setDate')
+let inputtime = document.querySelector('#inputtime')
+let button = document.querySelector("#button")
+let submit = document.querySelector("#submit")
+const form = document.querySelector('form')
+const days = document.getElementById("days")
+const hours = document.getElementById("hours");
+const mins = document.getElementById("mins");
+const seconds = document.getElementById("seconds");
 let stamp = 0
 
 ti.addEventListener('click', () => {
@@ -26,7 +37,7 @@ setti.addEventListener('click', () => {
     setti.classList.add('selectedtimeformat')
     ti.classList.remove('selectedtimeformat')
     ti.classList.add('unselectedformat')
-    shiftshift.classList.add('notvisible')
+    //shiftshift.classList.add('notvisible')
     stamp = 12
 })
 
@@ -60,11 +71,84 @@ stopwatch.addEventListener('click', () => {
     stamp = 24
 })
 
+setDate.addEventListener('click', () => {
+//     sample.classList.toggle('hide')
+//     setTimeout(() => {
+        inputtime.style.display = 'block'
+//     }, 1000)
+    
+})
+
+button.addEventListener('click', () => {
+    inputtime.style.display = 'none'
+})
+
+let indate;
+let intime;
+let datein;
+let countDownDate;
+
+submit.addEventListener('click', (e) => {
+    e.preventDefault()
+    indate = form.elements.day.value
+    console.log(form.elements.day.value)
+    intime = form.elements.time.value
+    datein = `${indate} ${intime}`
+    console.log('hi')
+    countdownDate = new Date(datein).getTime();
+    console.log(datein)
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        if (countdownDate == 0) {
+            return
+        }
+        var now = new Date().getTime();
+      
+        // Find the distance between now and the count down date
+        var distance = countdownDate - now;
+      
+        // Time calculations for days, hours, minutes and seconds
+        var dayso = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hourso = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minuteso = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var secondso = Math.floor((distance % (1000 * 60)) / 1000);
+      
+        // Display the result in the element with id="demo"
+      //   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      //   + minutes + "m " + seconds + "s ";
+      
+        days.innerHTML = dayso;
+          hours.innerHTML = hourso;
+          mins.innerHTML = minuteso;
+          seconds.innerHTML = secondso;
+      
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+      inputtime.style.display = 'none';
+})
+
+console.log(indate)
+console.log(intime)
+console.log(datein)
 
 
-const hours = document.getElementById("hours");
-const mins = document.getElementById("mins");
-const seconds = document.getElementById("seconds");
+// inputtime.addEventListener('click', () => {
+//     inputtime.style.display = 'none'
+// })
+
+
+
+// let timeUp = (countDownDate) => {
+
+// let countdownDateTime = countDownDate
+
+//}
+
 
 // const newTime = "Jan 5, 2022 00:2:25";
 // const setTime = "Jan 5, 2022 00:00:00";
@@ -106,14 +190,18 @@ const seconds = document.getElementById("seconds");
     
 // }
 
-let hourtime = 0
-let mintime = 1
-let secondtime = 15
+// let hourtime = 0
+// let mintime = 1
+// let secondtime = 15
+
+//var countDownDate = new Date("Jan 5, 2022").getTime();
+
+// Update the count down every 1 second
 
 
 
 
-let countdown = () => {
+// let countdown = () => {
     // while (hourtime != 0 & mintime != 0 & secondtime != 0) {
     //     let mt = mintime
     //     while (mt > -1) {
@@ -156,20 +244,20 @@ let countdown = () => {
             
                     //setInterval(less(secondtime), 1000)
                     //while(secondtime > -1) {
-                        setInterval(() => {
-                            secondtime - 1; 
-                            hours.innerHTML = hourtime;
-                            mins.innerHTML = mintime;
-                            seconds.innerHTML = secondtime;
-                        }, 1000)
+                        // setInterval(() => {
+                        //     secondtime - 1; 
+                        //     hours.innerHTML = hourtime;
+                        //     mins.innerHTML = mintime;
+                        //     seconds.innerHTML = secondtime;
+                        // }, 1000)
                     //}
                     
 
-}
+//}
 
-countdown();
+// countdown();
 
-setInterval(countdown(), 1000)
+// setInterval(countdown(), 1000)
 
 
 // const totalSeconds = (currentDate - newYearsDate) / 1000;

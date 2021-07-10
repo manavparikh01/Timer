@@ -50,10 +50,10 @@ html {
 body {
 	/*background-color: #60a9ff;*/
 	background-color: beige;
-	display: flex;
+	/*display: flex;*/
 	/*justify-content: center;*/
 	/*align-items: center;*/
-	min-height: 100vh;
+	max-height: 100vh;
 }
 
 button {
@@ -63,7 +63,11 @@ button {
 }
 
 #clock {
-	margin: auto;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	/*min-height: 60vh;*/
 	background-color: beige;
 	border: 1px grey solid;
 	text-align: center;
@@ -74,9 +78,11 @@ button {
 
 .row {
 	margin-top: auto;
-	min-height: 90vh;
+	min-height: 85vh;
 	justify-content: center;
 	align-items: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .timeshift {
@@ -183,3 +189,110 @@ a {
 	width: 100px;
 	background-color: wheat;
 }*/
+
+.hide {
+	height: 0;
+	color: rgba(0, 0, 0, 0);
+	visibility: hidden;
+	transition: all 1s
+}
+
+.time {
+	font-size: 60px;
+	padding-top: 6.75px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.buttons {
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+}
+
+.setDate {
+	border: 1px grey solid;
+	background-color: beige;
+	padding: 10px;
+	margin: auto;
+}
+
+#clock {
+	justify-content: center;
+	align-items: center;
+}
+
+#inputtime {
+	position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.setsample {
+	/*width: 400px;
+	height: 250px;*/
+	/*margin-top: 200px;*/
+	/*margin-left: auto;
+	margin-right: auto;*/
+	background-color: beige;
+}
+
+.unseltf {
+	color: grey;
+}
+
+#clocksettime {
+	margin: auto;
+	background-color: beige;
+	border: 1px grey solid;
+	text-align: center;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+}
+
+.datetime {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.inout {
+	padding: 5px;
+	border: 1px grey solid;
+	background-color: beige;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.inoutdown {
+	border: 1px grey solid;
+	background-color: beige;
+	padding: 10px;
+}
+
+#submit {
+	border: 1px grey solid;
+	background-color: beige;
+	padding: 10px;
+	margin: 5px;
+}
+
+#button {
+	border: 1px grey solid;
+	background-color: beige;
+	padding: 10px;
+	margin: 5px;
+}

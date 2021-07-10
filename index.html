@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clock</title>
+    <title>Timer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
     <link rel="stylesheet" href="assets/style.css">
@@ -16,11 +16,11 @@
             <div class="timeshift mt-3">
                 <button><div class="ti selectedtimeformat" id="change"><h5>Countdown</h5></div></button>
                 <div class=space"></div>
-                <button><div class="setti unselectedformat" id="change"><h5>Set Timer</h5></div></button>
+                <button><div class="setti unselectedformat" id="change"><h5>Timer</a></h5></div></button>
             </div>
             <div class="siftsift mt-3">
-                <button><div class="cl selectedtimeformat" id="change"><h5>Clock</h5></div></button>
-                <button><div class="tm unselectedformat" id="change"><h5>Timer</h5></div></button>
+                <button><div class="cl unselectedformat" id="change"><h5><a class="unseltf" href="https://manavparikh01.github.io/Clock/">Clock</a></h5></div></button>
+                <button><div class="tm selectedtimeformat" id="change"><h5>Timer</h5></div></button>
                 <button><div class="st unselectedformat" id="change"><h5>Stopwatch</h5></div></button>
             </div>
         </div>
@@ -31,34 +31,73 @@
                 <div class="sample">
                 
                     <div class="dayson">
-                        <p id="days">0</p>
+                        <p id="days" class="time">0</p>
                         <span>days</span>
                     </div>
                     <div class="hourson">
-                        <p id="hours">0</p>
+                        <p id="hours" class="time">0</p>
                         <span>hours</span>
                     </div>
                     <div class="minson">
-                        <p id="mins">0</p>
+                        <p id="mins" class="time">0</p>
                         <span>mins</span>
                     </div>
                     <div class="secondson">
-                        <p id="seconds">0</p>
+                        <p id="seconds" class="time">0</p>
                         <span>seconds</span>
                     </div>
-                
                 </div>
+            </div>
+            <div class="buttons">
+                
+                    
+                    <button class="setDate">Set Date</button>
+                
+                
+            </div>
+                </div>
+                
                 <!--<div class="timeisback">
                     <div class="time"></div>
                     <div class="timeagain"></div>
                 </div>-->
                 <!--<div class="sampleone"></div>-->
-            </div>
-        </div>
+            
+
+        
         
 
         
     </div>
+    <div  id="inputtime">
+        
+            <div class="row">
+                <div class="col-6 offset-3" id="clocksettime">
+            <div class="setsample">
+                <form class="formcountdown">
+                    <div class="datetime">
+                        <div class="inout">
+                            <label for="day">Day </label>
+                            <input type="date" class="inoutdown" id="day" name="day">
+                        </div>
+                        <div class="inout">
+                            <label for="time">Time </label>
+                            <input type="time" class="inoutdown" id="time" name="time">
+                        </div>
+                    </div>
+                    
+                    
+                    <br>
+                    <input type="submit" id="submit">
+                    <button id="button">Back</button>
+                </form>
+                
+            </div>
+        </div>
+        </div>
+        
+    </div>
+    
     
 
 
